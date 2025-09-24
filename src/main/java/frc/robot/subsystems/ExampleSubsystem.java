@@ -26,7 +26,7 @@ public class ExampleSubsystem extends SubsystemBase {
       System.out.println("Failed to load music: " + status);
     }
     else{
-      m_orchestra.play();
+      System.out.println("Load successful!");
     }
   }
 
@@ -35,13 +35,10 @@ public class ExampleSubsystem extends SubsystemBase {
    *
    * @return a command
    */
-  public Command exampleMethodCommand() {
+  public void playMusic() {
+    m_orchestra.play();
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
-    return runOnce(
-        () -> {
-          /* one-time action goes here */
-        });
   }
 
   /**
