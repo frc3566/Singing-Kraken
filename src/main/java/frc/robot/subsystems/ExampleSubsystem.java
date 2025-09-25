@@ -41,6 +41,17 @@ public class ExampleSubsystem extends SubsystemBase {
     // Subsystem::RunOnce implicitly requires `this` subsystem.
   }
 
+  public void stopMusic() {
+    m_orchestra.stop();
+  }
+
+  public void pauseMusic() {
+    m_orchestra.pause();
+  }
+
+  public boolean isPlaying() {
+    return m_orchestra.isPlaying();
+  }
   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
    *
