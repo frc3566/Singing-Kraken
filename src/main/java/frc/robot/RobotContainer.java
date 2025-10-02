@@ -45,8 +45,9 @@ public class RobotContainer {
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     m_driverController.x().onTrue(new InstantCommand(() -> m_exampleSubsystem.playMusic()));
-    m_driverController.y().onTrue(new InstantCommand(() -> m_exampleSubsystem.stopMusic()));
-    m_driverController.a().onTrue(new InstantCommand(() -> m_exampleSubsystem.pauseMusic()));
+    m_driverController.a().onTrue(new InstantCommand(() -> m_exampleSubsystem.stopMusic()));
+    m_driverController.b().onTrue(new InstantCommand(() -> m_exampleSubsystem.pauseMusic()));
+    m_driverController.y().onTrue(new InstantCommand(() -> m_exampleSubsystem.isPlaying()));
   }
 
   /**
@@ -56,6 +57,8 @@ public class RobotContainer {
    */
   public Command getAutonomousCommand() {
     // An example command will be run in autonomous
-    return Autos.exampleAuto(m_exampleSubsystem);
+    return new Command() {
+      
+    };
   }
 }

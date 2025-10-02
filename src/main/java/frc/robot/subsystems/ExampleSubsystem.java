@@ -21,7 +21,7 @@ public class ExampleSubsystem extends SubsystemBase {
     m_orchestra = new Orchestra();
     // Add a single device to the orchestra
     m_orchestra.addInstrument(new TalonFX(0));
-    var status = m_orchestra.loadMusic("ymca.chrp");
+    var status = m_orchestra.loadMusic("megalovania.chrp");
     if (!status.isOK()) {
       System.out.println("Failed to load music: " + status);
     }
@@ -49,8 +49,8 @@ public class ExampleSubsystem extends SubsystemBase {
     m_orchestra.pause();
   }
 
-  public boolean isPlaying() {
-    return m_orchestra.isPlaying();
+  public void isPlaying() {
+    System.out.println(m_orchestra.isPlaying()); 
   }
   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
@@ -71,4 +71,5 @@ public class ExampleSubsystem extends SubsystemBase {
   public void simulationPeriodic() {
     // This method will be called once per scheduler run during simulation
   }
+  
 }
